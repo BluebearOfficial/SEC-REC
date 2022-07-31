@@ -1,5 +1,7 @@
 # 草神纳西妲
 
+![](https://gcdnb.pbrd.co/images/NITvRS47VxSC.jpg)
+
 **啊啊啊啊啊啊啊啊啊啊啊啊啊啊我一定要拿下小吉祥草王！**
 
 **发情了发情了！她实在是太可爱了！**
@@ -11,5 +13,3 @@
 **到时候我要好好prpr的说！**
 
 **诶嘿嘿没人知道的没人知道的！**
-
-![](https://gcdnb.pbrd.co/images/NITvRS47VxSC.jpg)
