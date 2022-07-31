@@ -12,4 +12,4 @@
 
 **诶嘿嘿没人知道的没人知道的！**
 
-![](https://pasteboard.co/NITvRS47VxSC.jpg)
+![](https://gcdnb.pbrd.co/images/NITvRS47VxSC.jpg)
