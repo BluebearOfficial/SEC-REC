@@ -12,4 +12,4 @@
 
 **诶嘿嘿没人知道的没人知道的！**
 
-![](https://bkimg.cdn.bcebos.com/pic/908fa0ec08fa513d26973223903942fbb2fb4216738b?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UyMjA=,g_7,xp_5,yp_5/format,f_auto)
+![](https://bkimg.cdn.bcebos.com/pic/908fa0ec08fa513d26973223903942fbb2fb4216738b)
