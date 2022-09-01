@@ -7,4 +7,4 @@ ReMMz的秘密记录(你不会知道这是什么的)
 
 \_(:з」∠)\_
 
-### [你要尝试访问吗？](https://mimangz.github.io/SEC-REC/)
+### [你要尝试访问吗？](https://mimangz.github.io/SEC-REC/init.html)
