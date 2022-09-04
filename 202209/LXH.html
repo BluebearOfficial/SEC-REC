@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!-- 
+纯用CSS实现的罗小黑！！！
+搬运自https://github.com/ToTheBrinyDeep/LuoXiaoHei
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            position: absolute;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 800px;
+            height: 700px;
+            background: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -100;
+        }
+
+        .head {
+            height: 300px;
+            width: 350px;
+            top: 100px;
+            background: #000;
+            border-radius: 50% 50% 50% 50% / 60% 60% 50% 50%;
+            border: 10px solid #513422;
+        }
+
+        .left_eye {
+            top: 40px;
+            left: -5px;
+            width: 160px;
+            height: 200px;
+            background: #fcf9ce;
+            border-radius: 45% 45% 50% 40% / 50% 50% 50% 50%;
+            border: 10px solid #533624;
+        }
+
+        .left_eye_ball {
+            height: 120px;
+            width: 80px;
+            background: #000;
+            top: 30px;
+            left: 30px;
+            border-radius: 55% 45% 50% 50% / 50% 50% 50% 40%;
+            border: 10px solid #533624;
+        }
+
+        .right_eye {
+            top: 40px;
+            right: -5px;
+            width: 160px;
+            height: 200px;
+            background: #fcf9ce;
+            border-radius: 45% 45% 40% 50% / 50%;
+            border: 10px solid #513422;
+        }
+
+        .right_eye_ball {
+            height: 120px;
+            width: 80px;
+            background: #000;
+            top: 30px;
+            right: 30px;
+            border-radius: 45% 55% 50% 50% / 50% 50% 40% 50%;
+            border: 10px solid #533624;
+        }
+
+        .mouse_border {
+            top: 245px;
+            left: 145px;
+            height: 0px;
+            width: 0px;
+            border: 30px solid;
+            border-color: #513523 transparent transparent transparent;
+            border-top-width: 50px;
+            z-index: 2;
+        }
+
+        .mouse {
+            top: -43px;
+            left: -17px;
+            height: 0px;
+            width: 0px;
+            border: 17px solid;
+            border-color: #2d7c9b transparent transparent transparent;
+            border-top-width: 30px;
+            z-index: 3;
+        }
+
+        .body_top_border {
+            height: 0px;
+            width: 0px;
+            border: 103px solid;
+            border-color: transparent transparent #533624 transparent;
+            border-bottom-width: 300px;
+            top: 100px;
+            z-index: -1;
+        }
+
+        .body_top {
+            height: 0px;
+            width: 0px;
+            border: 93px solid;
+            border-color: transparent transparent #000 transparent;
+            border-bottom-width: 290px;
+            left: -93px;
+            top: -80px;
+            z-index: -1;
+        }
+
+        .body_bottom {
+            width: 190px;
+            height: 60px;
+            border: 10px solid #533624;
+            border-radius: 19% 19% 35% 35%/ 50% 50% 50% 50%;
+            background-color: #000;
+            top: 476px;
+            z-index: -2;
+        }
+
+        .hand_left {
+            width: 30px;
+            height: 90px;
+            border: 10px solid #533624;
+            border-radius: 0% 0% 20% 80% / 0% 0% 10% 90%;
+            border-top-color: transparent;
+            transform: rotate(-2deg);
+            transform-origin: left top;
+            top: 450px;
+            left: 348px;
+        }
+
+        .hand_right {
+            width: 30px;
+            height: 90px;
+            border: 10px solid #533624;
+            border-radius: 0% 0% 60% 40% / 0% 0% 90% 20%;
+            border-top-color: transparent;
+            transform: rotate(3deg);
+            transform-origin: left top;
+            top: 450px;
+            left: 403px;
+        }
+
+        .tail_top {
+            width: 30px;
+            height: 30px;
+            background: #000;
+            border: 10px solid #533624;
+            border-radius: 50% 50% 0% 5% / 50% 40% 0% 30%;
+            transform: rotate(-20deg);
+            transform-origin: left top;
+            left: 240px;
+            top: 465px;
+        }
+
+        .tail_bottom {
+            width: 30px;
+            height: 60px;
+            background: #000;
+            border: 10px solid #533624;
+            border-right-width: 5px;
+            border-radius: 31% 0% 40% 60% / 50% 0% 100% 80%;
+            transform: rotate(-60deg);
+            transform-origin: left top;
+            left: 250px;
+            top: 510px;
+            z-index: -4;
+        }
+
+        .tail_content1 {
+            width: 30px;
+            height: 10.5px;
+            background: #000;
+            border-radius: 0% 0% 0% 5% / 0% 0% 0% 70%;
+            transform: rotate(-20deg);
+            transform-origin: left top;
+            left: 263.1px;
+            top: 499.1px;
+        }
+
+        .tail_content2 {
+            width: 15px;
+            height: 8px;
+            background: #533624;
+            border-radius: 0% 0% 60% 0% / 0% 0% 100% 0%;
+            transform: rotate(70deg);
+            transform-origin: left top;
+            left: 300.3px;
+            top: 490px;
+            z-index: 2;
+        }
+
+        .tail_content3 {
+            width: 20px;
+            height: 5px;
+            background: #533624;
+            border-radius: 0% 0% 0% 5% / 0% 0% 0% 70%;
+            transform: rotate(50deg);
+            transform-origin: left top;
+            left: 263.1px;
+            top: 500px;
+        }
+
+        .ear_left_top_border {
+            width: 170px;
+            height: 40px;
+            border: 10px solid #533624;
+            border-radius: 30% 60% 0% 0% / 20% 50% 0% 0%;
+            border-color: #533624 transparent transparent transparent;
+            transform: rotate(1deg);
+            transform-origin: left top;
+            left: 168px;
+            top: 92px;
+        }
+
+        .ear_left_middle_border {
+            width: 120px;
+            height: 40px;
+            border: 10px solid #533624;
+            border-radius: 30% 60% 0% 0% / 20% 80% 0% 0%;
+            border-color: #533624 transparent transparent transparent;
+            transform: rotate(20deg);
+            transform-origin: left top;
+            left: 172px;
+            top: 92px;
+        }
+
+        .ear_left_bottom_border {
+            width: 200px;
+            height: 40px;
+            border: 10px solid #533624;
+            border-radius: 0% 0% 50% 50% / 0% 0% 50% 70%;
+            border-color: transparent transparent #533624 transparent;
+            transform: rotate(75deg);
+            transform-origin: left top;
+            left: 210px;
+            top: 70px;
+        }
+
+        .ear_right_top_border {
+            width: 170px;
+            height: 40px;
+            border: 10px solid #533624;
+            border-radius: 60% 30% 0% 0% / 50% 20% 0% 0%;
+            border-color: #533624 transparent transparent transparent;
+            transform: rotate(-1deg);
+            transform-origin: right top;
+            right: 168px;
+            top: 92px;
+        }
+
+        .ear_right_middle_border {
+            width: 120px;
+            height: 40px;
+            border: 10px solid #533624;
+            border-radius: 60% 30% 0% 0% / 80% 20% 0% 0%;
+            border-color: #533624 transparent transparent transparent;
+            transform: rotate(-20deg);
+            transform-origin: right top;
+            right: 172px;
+            top: 92px;
+        }
+
+        .ear_right_bottom_border {
+            width: 200px;
+            height: 40px;
+            border: 10px solid #533624;
+            border-radius: 0% 0% 50% 50% / 0% 0% 70% 50%;
+            border-color: transparent transparent #533624 transparent;
+            transform: rotate(-75deg);
+            transform-origin: right top;
+            right: 210px;
+            top: 70px;
+        }
+
+        .ear_left_top {
+            background: #000;
+            width: 150px;
+            height: 100px;
+            top: 100px;
+            left: 190px;
+            border-radius: 0% 90% 0% 100% / 0% 20% 0% 100%;
+            z-index: -2;
+        }
+
+        .ear_left_bottom {
+            background: #c1c063;
+            width: 150px;
+            height: 230px;
+            top: 105px;
+            left: 174px;
+            border-radius: 0% 90% 0% 100% / 0% 80% 0% 100%;
+            z-index: -1;
+        }
+
+        .ear_right_top {
+            background: #000;
+            width: 150px;
+            height: 100px;
+            top: 100px;
+            right: 190px;
+            border-radius: 90% 0% 100% 0% / 20% 0% 100% 0%;
+            z-index: -2;
+        }
+
+        .ear_right_bottom {
+            background: #c1c063;
+            width: 150px;
+            height: 230px;
+            top: 105px;
+            right: 174px;
+            border-radius: 90% 0% 100% 0% / 80% 0% 100% 0%;
+            z-index: -1;
+        }
+
+        .chin {
+            width: 70px;
+            height: 20px;
+            background: #000;
+            top: 400px;
+        }
+
+        .chin_border_left {
+            width: 10px;
+            height: 10px;
+            background: #533624;
+            border-radius: 0% 50% 50% 0% / 0% 50% 50% 0%;
+            top: 409px;
+            left: 364px;
+        }
+
+        .chin_border_right {
+            width: 10px;
+            height: 10px;
+            background: #533624;
+            border-radius: 50% 0% 0% 50% / 50% 0% 0% 50%;
+            top: 409px;
+            right: 364px;
+        }
+
+        .hand_left_border_left {
+            width: 10px;
+            height: 23px;
+            background: #533624;
+            border-radius: 50% 50% 0% 0% / 30% 30% 0% 0%;
+            transform: rotate(-2deg);
+            transform-origin: left top;
+            top: 445px;
+            left: 347.9px;
+        }
+
+        .hand_left_border_right {
+            width: 10px;
+            height: 23px;
+            background: #533624;
+            border-radius: 50% 50% 0% 0% / 30% 30% 0% 0%;
+            transform: rotate(-2deg);
+            transform-origin: left top;
+            top: 445px;
+            left: 387.9px;
+        }
+
+        .hand_right_border_left {
+            width: 10px;
+            height: 23px;
+            background: #533624;
+            border-radius: 50% 50% 0% 0% / 30% 30% 0% 0%;
+            transform: rotate(3deg);
+            transform-origin: left top;
+            top: 445px;
+            left: 403.3px;
+        }
+
+        .hand_right_border_right {
+            width: 10px;
+            height: 23px;
+            background: #533624;
+            border-radius: 50% 50% 0% 0% / 30% 30% 0% 0%;
+            transform: rotate(3deg);
+            transform-origin: left top;
+            top: 445px;
+            left: 443.3px;
+        }
+
+        .heixiu {
+            height: 90px;
+            width: 136px;
+            background: #000;
+            border: 5px solid #533624;
+            border-radius: 50% 45% 35px 30% / 60% 60px 45px 40%;
+            top: 450px;
+            left: 550px;
+        }
+
+        .eye_left {
+            top: 8px;
+            left: -1.5px;
+            width: 60px;
+            height: 72px;
+            background: #fcf9ce;
+            border-radius: 60% 40% 50% 50% / 60% 50% 50% 40%;
+            border: 5px solid #533624;
+        }
+
+        .eye_right {
+            top: 4px;
+            left: 67.5px;
+            width: 60px;
+            height: 80px;
+            background: #fcf9ce;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            border: 5px solid #533624;
+        }
+
+        .eye_left_ball {
+            top: 14px;
+            left: 12px;
+            width: 26px;
+            height: 38px;
+            background: #000;
+            border-radius: 50% 50% 50% 50% / 55% 50% 50% 45%;
+            border: 5px solid #533624;
+        }
+
+        .eye_right_ball {
+            top: 18px;
+            left: 12px;
+            width: 26px;
+            height: 38px;
+            background: #000;
+            border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+            border: 5px solid #533624;
+        }
+
+        .heixiu_ear_left {
+            width: 6px;
+            height: 18px;
+            background: #000;
+            border: 5px solid #533624;
+            border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
+            transform-origin: left top;
+            transform: rotate(-20deg);
+            left: 580px;
+            top: 448px;
+            z-index: -1;
+        }
+
+        .heixiu_ear_left_content {
+
+            height: 0px;
+            width: 0px;
+            border: 4px solid;
+            border-color: #000 transparent transparent transparent;
+            transform-origin: left top;
+            transform: rotate(160deg);
+            border-top-width: 13px;
+            left: 597.1px;
+            top: 460px;
+            z-index: 10;
+        }
+
+        .heixiu_ear_right {
+            width: 6px;
+            height: 18px;
+            background: #000;
+            border: 5px solid #533624;
+            border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
+            transform-origin: left top;
+            transform: rotate(20deg);
+            left: 650px;
+            top: 440px;
+            z-index: -1;
+        }
+
+        .heixiu_ear_right_content {
+
+            height: 0px;
+            width: 0px;
+            border: 3.5px solid;
+            border-color: #000 transparent transparent transparent;
+            transform-origin: left top;
+            transform: rotate(-160deg);
+            border-top-width: 12px;
+            left: 655.3px;
+            top: 459.3px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ear_left_top_border"></div>
+        <div class="ear_left_middle_border"></div>
+        <div class="ear_left_bottom_border"></div>
+        <div class="ear_left_top"></div>
+        <div class="ear_left_bottom"></div>
+        <div class="ear_right_top_border"></div>
+        <div class="ear_right_middle_border"></div>
+        <div class="ear_right_bottom_border"></div>
+        <div class="ear_right_top"></div>
+        <div class="ear_right_bottom"></div>
+        <div class="head">
+            <div class="left_eye">
+                <div class="left_eye_ball"></div>
+            </div>
+            <div class="right_eye">
+                <div class="right_eye_ball"></div>
+            </div>
+            <div class="mouse_border">
+                <div class="mouse"></div>
+            </div>
+        </div>
+        <div class="body_top_border">
+            <div class="body_top"></div>
+        </div>
+        <div class="body_bottom"></div>
+        <div class="hand_left"></div>
+        <div class="hand_right"></div>
+        <div class="tail_top"></div>
+        <div class="tail_bottom"></div>
+        <div class="tail_content1"></div>
+        <div class="tail_content2"></div>
+        <div class="tail_content3"></div>
+        <div class="chin"></div>
+        <div class="chin_border_left"></div>
+        <div class="chin_border_right"></div>
+        <div class="hand_left_border_left"></div>
+        <div class="hand_left_border_right"></div>
+        <div class="hand_right_border_left"></div>
+        <div class="hand_right_border_right"></div>
+        <div class="heixiu">
+            <div class="eye_left">
+                <div class="eye_left_ball"></div>
+            </div>
+            <div class="eye_right">
+                <div class="eye_right_ball"></div>
+            </div>
+        </div>
+        <div class="heixiu_ear_left"></div>
+        <div class="heixiu_ear_left_content"></div>
+        <div class="heixiu_ear_right"></div>
+        <div class="heixiu_ear_right_content"></div>
+    </div>
+</body>
+
+</html>
