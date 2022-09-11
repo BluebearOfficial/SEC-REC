@@ -197,7 +197,7 @@ Deferral和promise
 
 str.match(/b+/g)
 
-***str.match(/b/*/g)***
+***str.match(/b\*/g)***
 
 str.match(/b{1,4}/g)
 
