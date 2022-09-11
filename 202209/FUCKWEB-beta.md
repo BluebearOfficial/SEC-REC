@@ -48,13 +48,7 @@ document.getElementByTagName('file')[0]
 
 var x=y===true:”true”?”false”;
 
-var x=(y===tru
-
-```
-
-```
-
-e):”true”?”false”;
+var x=(y===true):”true”?”false”;
 
 var x=(y===true){“true”:”false”};
 
